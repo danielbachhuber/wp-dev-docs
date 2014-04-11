@@ -1,4 +1,4 @@
-WP_Query performance tips
+WP_Query tips
 =========================
 
 A series of performance tips to keep in mind when you're using `WP_Query`
