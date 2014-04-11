@@ -1,4 +1,16 @@
 WordPress Developer Documentation
 ===========
 
-Reference material for developers building with WordPress.
+Community-powered reference material for developers building with WordPress. Pull requests welcome!
+
+## Contents
+
+**Security:**
+* [Introduction](security/introduction.md)
+* [Securing Input](security/securing-input.md)
+* [Escaping Output](security/escaping-output.md)
+
+**Performance:**
+* [WP_Query tips](performance/wp-query-tips.md)
+* [Uncached Functions](performance/uncached-functions.md)
+
