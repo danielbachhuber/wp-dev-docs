@@ -3,6 +3,8 @@ Escaping Output
 
 Every time a post title, post meta value, or some other data from the database is rendered to the user, we need to make sure it’s properly *escaped*. Escaping helps us prevent issues like malformed HTML or the dreaded cross-site scripting attack.
 
+For ease of code review, it's best to escape as late as possible. WordPress' escaping functions have low overhead, so there's no performance penalty to using them as many times as you need to.
+
 ### Escaping: Securing Output
 
 WordPress thankfully has a few helper functions we can use for most of what we'll commonly need to do:
