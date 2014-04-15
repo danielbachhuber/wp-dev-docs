@@ -1,4 +1,5 @@
-## Part Three: Plugin Security
+Security: An Introduction
+=========================
 
 Your code works, but is it safe? Will it make your users love your plugin or theme, or hate it when it lets their site get hacked? The best WordPress projects keep their users safe.
 
@@ -10,6 +11,8 @@ You're in luck though! There are common patterns you can follow to ensure the se
 
 **[Escaping Output](escaping-output.md):** Every time a post title, post meta value, or some other data from the database is rendered to the user, we need to make sure it’s properly escaped. This helps prevent issues like cross-site scripting.
 
-**Ensuring Users Are Who They Say They Are:** To keep sneaky evildoers from changing your plugin's settings or performing actions they shouldn’t be doing, it's important to always check to see if they are who they say they are. WordPress offers two ways: nonces and capability checks.
+**[Checking Capabilities](checking-capabilities.md)**: To keep sneaky evildoers from changing your plugin's settings, it's important to check that a given user has permission to make the change they want to make.
 
-Ready to make your plugin secure? Let’s get started.
+**[Verifying Intent](verifying-intent.md)**: Even though a given user might have the capability to perform the action you're checking, they might not have initiated it. Nonces are WordPress' way of verifying the user actually initiated the action.
+
+Ready to make your plugin secure? [Let’s get started](securing-input.md).
