@@ -7,6 +7,31 @@ As a developer, migrations can be nightmares — or they can be tasks you look f
 
 It goes without saying that you should use [WP-CLI](http://wp-cli.org/) as the framework for your migration script. WP-CLI is easy to extend with [custom commands](https://github.com/wp-cli/wp-cli/wiki/Commands-Cookbook). It also includes many reusable functional and presentational components.
 
+### Put default arguments in wp-cli.local.yml
+
+With commands you'll be using regularly, you can store your standard arguments in your `wp-cli.local.yml` file.
+
+Given a `wp-cli.local.yml` file like:
+
+```
+core install:
+  title: WordPress Trunk
+  url: http://wordpress-trunk.dev
+  admin_user: daniel
+  admin_password: daniel
+  admin_email: daniel@handbuilt.co
+```
+
+... a command like this:
+
+`wp core install --title="WordPress Trunk" --url=http://wordpress-trunk.dev --admin_user=daniel --admin_password=daniel --admin_email=daniel@handbuilt.co`
+
+... becomes as easy as this:
+
+`wp core install`
+
+When you want to quickly reset your WordPress instance, it becomes a two-liner: `wp db reset --yes; wp core install`
+
 ## Pre-fetch remote assets
 
 If your migration script is downloading assets on each run, you'll be spending too much time on redundant remote requests. Solve this problem by "pre-fetching" your remote assets.
