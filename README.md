@@ -15,4 +15,4 @@ Community-powered reference material for developers building with WordPress. Pul
 **Performance:**
 * [WP_Query tips](performance/wp-query-tips.md)
 * [Uncached Functions](performance/uncached-functions.md)
-
+* [Migrations](performance/migrations.md) - Speed makes migrations much more enjoyable.
