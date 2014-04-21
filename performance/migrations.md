@@ -44,3 +44,15 @@ Given a script to loop through all of your remote assets, you can use these help
 
 	}
 ```
+
+## Disable thumbnail generation
+
+Especially if you're running the import early in the site rebuild process, you'll want to disable thumbnail generation. Generating multiple sizes of each image has a severe performance penalty.
+
+Thumbnail generation can be disabled with:
+
+```
+add_filter( 'intermediate_image_sizes_advanced', '__return_false' );
+```
+
+Later on, when you're close to launch and all of the theme's image sizes have been nailed down, you can generate all of your necessary thumbnails with [wp media regenerate](http://wp-cli.org/commands/media/regenerate/).
