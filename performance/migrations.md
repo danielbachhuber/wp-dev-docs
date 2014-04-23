@@ -81,3 +81,23 @@ add_filter( 'intermediate_image_sizes_advanced', '__return_false' );
 ```
 
 Later on, when you're close to launch and all of the theme's image sizes have been nailed down, you can generate all of your necessary thumbnails with [wp media regenerate](http://wp-cli.org/commands/media/regenerate/).
+
+## Execution Pro Tips
+
+Once you're ready to commit to your migration script, you'll be happy you knew the following tips.
+
+### Run the script using screen
+
+`screen` is an [awesome utility for running your scripts](http://www.mattcutts.com/blog/a-quick-tutorial-on-screen/) even when the terminal window closes. Why does this matter? You probably don't want your script to die when you shut your laptop to go home for the evening. Before starting your script, make sure to launch a screen session.
+
+### Pipe verbosity to a log file
+
+Make sure your script produces output for the changes it's making to the database. WP-CLI has a couple utilities you can use: `WP_CLI::line()` and `WP_CLI::warning()`.
+
+Then, when you're running your script against production data, pipe the verbosity to a log file:
+
+```
+wp custom-command my-migration-command &> logfile.txt
+```
+
+The log of what happened during the migration can be tremendously useful post-migration, as you debug where your script did the unexpected. [ack](http://beyondgrep.com/) is a useful tool for searching through your log file.
