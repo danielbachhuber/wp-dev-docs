@@ -1,7 +1,9 @@
 Securing Input
-============
+==============
 
-Every time a user submits data to WordPress, or data is ingested from an external feed, or data comes into WordPress, you should make sure it’s safe to handle. Specifically, the insecure data typically comes in the form of `$_GET` or `$_POST` variables. You can make sure this data is safe to use by *validating* and *sanitizing*.
+Each time a user submits data to WordPress, or data is ingested from an external feed, or data generally comes from an external source, you should make sure it’s safe to handle. You want to make sure the data is safe for a variety of reasons; to help prevent [XSS](http://en.wikipedia.org/wiki/Cross-site_scripting) if the data is improperly escaped on output, and to ensure your code is executing how you expect are two good reasons. You can make sure this data is safe to use by *validating* and *sanitizing*.
+
+If you learn anything from this document, pay attention to you're handling those `$_GET` and `$_POST` variables!
 
 ## Validating: Checking User Input
 
