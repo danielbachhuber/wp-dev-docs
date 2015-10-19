@@ -1,7 +1,7 @@
 Verifying Intent
 ================
 
-When a user performs an action which alters the database, let it be submitting a settings form, modifying a user’s profile details, or editing a post's bdoy, we want to confirm it was actually them who initiated the action. WordPress packages a nice system called nonces ("Numbers used Once") to help you out.
+When a user performs an action which alters the database, let it be submitting a settings form, modifying a user’s profile details, or editing a post's body, we want to confirm it was actually them who initiated the action. WordPress packages a nice system called nonces ("Numbers used Once") to help you out.
 
 Because nonces have a set expiration, and can be generated to be unique to a given action, they're easy for WordPress to verify and difficult for the baddies to fake. Without nonces, your code can be susceptible to [cross-site request forgery](http://en.wikipedia.org/wiki/Cross-site_request_forgery).
 
