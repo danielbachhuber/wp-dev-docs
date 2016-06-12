@@ -29,7 +29,9 @@ WordPress thankfully has a few helper functions we can use for most of what we
 
 `esc_attr()` can be used on everything else that's printed into an HTML element's attribute.
 
-@todo example for esc_attr()
+```
+<a href="#" class="<?php echo esc_attr( implode( ', ', $custom_classes ) ); ?>">Click me</a>
+```
 
 It's important to note that most WordPress functions properly prepare the data for output, and you don't need to escape again.
 
@@ -38,6 +40,14 @@ It's important to note that most WordPress functions properly prepare the data f
 ```
 
 @todo include note of wp_post_kses()
+
+Special case when working on *textarea*. While applying wp_kses will delete <br /> html tag and newlines will not be preserved, there is a trick to do it.
+
+```
+<div class="excerpt">
+  echo trim( str_replace( '%newline%', '<br />', wp_kses( str_replace( '<br />', '%newline%', $string ), '' ) ) );
+</div>
+```
 
 ### Conclusion
 
